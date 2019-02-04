@@ -1,10 +1,10 @@
 package com.gildedrose;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Builder
 @Data
+@AllArgsConstructor
 class Item {
 
     private String name;

@@ -48,7 +48,7 @@ public class GildedRoseIT {
     @Test
     public void ensureThatAgedBrieIncreasesInQuality() {
         // given
-        Item[] items = new Item[] {new Item("Aged Brie", 10, 20)};
+        Item[] items = new Item[] {new AgedBrieItem(10, 20)};
         GildedRose app = new GildedRose(items);
         // when
         app.updateQuality();
@@ -60,7 +60,7 @@ public class GildedRoseIT {
     @Test
     public void ensureThatQualityNeverIncreasesAbove50() {
         // given
-        Item[] items = new Item[] {new Item("Aged Brie", 2, 0)};
+        Item[] items = new Item[] {new AgedBrieItem(2, 0)};
         GildedRose app = new GildedRose(items);
         // when
         for (int i = 0; i < 75; i++) {
@@ -74,7 +74,7 @@ public class GildedRoseIT {
     @Test
     public void ensureThatSulfurasNeverDecreasesQuality() {
         // given
-        Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", -1, 80)};
+        Item[] items = new Item[] {new SulfurasItem(-1, 80)};
         GildedRose app = new GildedRose(items);
         // when
         app.updateQuality();
@@ -86,7 +86,7 @@ public class GildedRoseIT {
     @Test
     public void ensureThatBackstagePassesIncreasesInQualityBy1AsItsSellInValueApproaches() {
         // given
-        Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 15, 1)};
+        Item[] items = new Item[] {new ConcertItem(15, 1)};
         GildedRose app = new GildedRose(items);
         // when
         app.updateQuality();
@@ -98,7 +98,7 @@ public class GildedRoseIT {
     @Test
     public void ensureThatBackstagePassesIncreasesInQualityBy2AsItsSellInValueApproaches() {
         // given
-        Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 1)};
+        Item[] items = new Item[] {new ConcertItem(10, 1)};
         GildedRose app = new GildedRose(items);
         // when
         app.updateQuality();
@@ -110,7 +110,7 @@ public class GildedRoseIT {
     @Test
     public void ensureThatBackstagePassesIncreasesInQualityBy3AsItsSellInValueApproaches() {
         // given
-        Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 5, 1)};
+        Item[] items = new Item[] {new ConcertItem(5, 1)};
         GildedRose app = new GildedRose(items);
         // when
         app.updateQuality();
@@ -122,7 +122,7 @@ public class GildedRoseIT {
     @Test
     public void ensureThatBackstagePassesDropsTo0AfterConcert() {
         // given
-        Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 0, 1)};
+        Item[] items = new Item[] {new ConcertItem(0, 1)};
         GildedRose app = new GildedRose(items);
         // when
         app.updateQuality();
