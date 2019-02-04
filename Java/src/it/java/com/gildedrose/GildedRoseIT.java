@@ -10,6 +10,18 @@ import static org.hamcrest.Matchers.is;
 public class GildedRoseIT {
 
     @Test
+    public void ensureThatWhenSellByDateHasPassedQualityDegradesTwiceAsFast() {
+        // given
+        Item[] items = new Item[] {new Item("+5 Dexterity Vest", -1, 2)};
+        GildedRose app = new GildedRose(items);
+        // when
+        app.updateQuality();
+        // then
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(-2)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(0)));
+    }
+
+    @Test
     public void ensureThatSellInAndQualityIsLoweredAtTheEndOfTheDay() {
         // given
         Item[] items = new Item[] {new Item("item", 10, 20)};
