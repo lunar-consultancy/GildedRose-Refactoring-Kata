@@ -1,17 +1,21 @@
 package com.gildedrose;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 public class GildedRoseTest {
 
     @Test
     public void foo() {
-        Item[] items = new Item[] { new Item("foo", 0, 0) };
+        // given
+        Item[] items = new Item[] {new Item("foo", 0, 0)};
         GildedRose app = new GildedRose(items);
+        // when
         app.updateQuality();
-        assertEquals("fixme", app.items[0].name);
+        // then
+        assertThat(app.items[0].name, is(equalTo("foo")));
     }
-
 }
