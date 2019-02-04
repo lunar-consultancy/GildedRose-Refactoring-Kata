@@ -1,69 +1,23 @@
 package com.gildedrose;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 class GildedRose {
 
-    private final Item[] items;
+    private final ItemRepository itemRepository;
+    private final ItemVisitor itemVisitor;
 
-    GildedRose(final Item[] items) {
-        this.items = items;
+    @Autowired
+    GildedRose(final ItemRepository itemRepository, final ItemVisitor itemVisitor) {
+        this.itemRepository = itemRepository;
+        this.itemVisitor = itemVisitor;
     }
 
     // Ignore warnings -> needs to be refactored
     @SuppressWarnings({"checkstyle:cyclomaticcomplexity", "checkstyle:methodlength", "checkstyle:magicnumber"})
     void updateQuality() {
-        for (final Item item : items) {
-            if (!(item instanceof AgedBrieItem)
-                    && !(item instanceof ConcertItem)) {
-                if (item.getQuality() > 0) {
-                    if (!(item instanceof SulfurasItem)) {
-                        item.setQuality(item.getQuality() - 1);
-                    }
-                }
-            } else {
-                if (item.getQuality() < 50) {
-                    item.setQuality(item.getQuality() + 1);
-
-                    if (item instanceof ConcertItem) {
-                        if (item.getSellIn() < 11) {
-                            if (item.getQuality() < 50) {
-                                item.setQuality(item.getQuality() + 1);
-                            }
-                        }
-
-                        if (item.getSellIn() < 6) {
-                            if (item.getQuality() < 50) {
-                                item.setQuality(item.getQuality() + 1);
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (!(item instanceof SulfurasItem)) {
-                item.setSellIn(item.getSellIn() - 1);
-            }
-
-            if (item.getSellIn() < 0) {
-                if (!(item instanceof AgedBrieItem)) {
-                    if (!(item instanceof ConcertItem)) {
-                        if (item.getQuality() > 0) {
-                            if (!(item instanceof SulfurasItem)) {
-                                item.setQuality(item.getQuality() - 1);
-                            }
-                        }
-                    } else {
-                        item.setQuality(item.getQuality() - item.getQuality());
-                    }
-                } else {
-                    if (item.getQuality() < 50) {
-                        item.setQuality(item.getQuality() + 1);
-                    }
-                }
-            }
-        }
-    }
-
-    Item[] getItems() {
-        return items;
+        itemRepository.getItems().forEach(item -> item.accept(itemVisitor));
     }
 }

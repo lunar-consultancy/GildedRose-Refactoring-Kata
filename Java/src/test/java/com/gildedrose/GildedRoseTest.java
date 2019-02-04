@@ -1,21 +1,41 @@
 package com.gildedrose;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import java.util.List;
 
+import static java.util.Collections.singletonList;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = GildedRose.class)
 public class GildedRoseTest {
 
+    @MockBean
+    private ItemRepository itemRepository;
+    @MockBean
+    private ItemVisitor itemVisitor;
+
+    @Autowired
+    private GildedRose gildedRose;
+
     @Test
-    public void foo() {
+    public void updateQualityShouldIterateOverItemsAndAcceptVisitor() {
         // given
-        Item[] items = new Item[] {new Item("foo", 0, 0)};
-        GildedRose app = new GildedRose(items);
+        VisitableItem item1 = mock(VisitableItem.class);
+        List<VisitableItem> items = singletonList(item1);
+        when(itemRepository.getItems()).thenReturn(items);
         // when
-        app.updateQuality();
+        gildedRose.updateQuality();
         // then
-        assertThat(app.getItems()[0].getName(), is(equalTo("foo")));
+        verify(itemRepository).getItems();
+        verify(item1).accept(itemVisitor);
     }
 }
