@@ -16,6 +16,6 @@ public class GildedRoseTest {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].name, is(equalTo("foo")));
+        assertThat(app.getItems()[0].getName(), is(equalTo("foo")));
     }
 }

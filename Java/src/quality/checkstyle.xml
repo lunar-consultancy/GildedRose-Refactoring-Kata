@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+    <property name="severity" value="warning"/>
+    <module name="TreeWalker">
+        <property name="cacheFile" value="checkstyle-cachefile"/>
+        <module name="SuppressWarningsHolder"/>
+        <module name="FileContentsHolder"/>
+        <module name="CyclomaticComplexity">
+            <property name="severity" value="error"/>
+            <property name="max" value="7"/>
+        </module>
+        <module name="InterfaceIsType">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="StringLiteralEquality">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="TypecastParenPad">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="Regexp">
+            <property name="severity" value="error"/>
+            <property name="format" value="System\.out\.println"/>
+            <property name="message" value="Use commons logging instead."/>
+            <property name="illegalPattern" value="true"/>
+        </module>
+        <module name="LocalVariableName">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="NoWhitespaceBefore">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="AnonInnerLength">
+            <property name="severity" value="error"/>
+            <property name="max" value="25"/>
+        </module>
+        <module name="RedundantImport">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="StaticVariableName">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="ParameterName">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="FinalClass">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="ParenPad">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="ParameterNumber">
+            <property name="severity" value="error"/>
+            <property name="max" value="8"/>
+        </module>
+        <module name="WhitespaceAfter">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="UpperEll">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="LocalFinalVariableName">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="TypeName">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="MemberName">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="NeedBraces">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="FinalParameters">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="VisibilityModifier">
+            <property name="severity" value="error"/>
+            <property name="protectedAllowed" value="true"/>
+        </module>
+        <module name="PackageName">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="ParameterAssignment">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="IllegalImport">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="AvoidNestedBlocks">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="SimplifyBooleanExpression">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="SimplifyBooleanReturn">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="InnerAssignment">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="MagicNumber">
+            <property name="severity" value="error"/>
+            <property name="ignoreAnnotation" value="true"/>
+        </module>
+        <module name="ModifiedControlVariable">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="FallThrough">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="IllegalInstantiation">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="LeftCurly">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="DeclarationOrder">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="MethodName">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="LineLength">
+            <property name="severity" value="error"/>
+            <property name="max" value="160"/>
+        </module>
+        <module name="AvoidStarImport">
+            <property name="severity" value="error"/>
+            <property name="excludes" value="org.junit,org.hamcrest"/>
+        </module>
+        <module name="EmptyForIteratorPad">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="MultipleStringLiterals">
+            <property name="severity" value="error"/>
+            <property name="allowedDuplicates" value="3"/>
+        </module>
+        <module name="DefaultComesLast">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="OperatorWrap">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="EmptyBlock">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="MethodLength">
+            <property name="severity" value="error"/>
+            <property name="max" value="25"/>
+            <property name="countEmpty" value="false"/>
+        </module>
+        <module name="MultipleVariableDeclarations">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="EqualsHashCode">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="MissingSwitchDefault">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="MethodParamPad">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="CovariantEquals">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="EmptyStatement">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="RightCurly">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="ConstantName">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="ArrayTypeStyle">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="UnusedImports">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="ModifierOrder">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="NoWhitespaceAfter">
+            <property name="severity" value="error"/>
+            <property name="tokens" value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS, UNARY_PLUS"/>
+        </module>
+        <module name="AnnotationUseStyle"/>
+        <module name="IllegalType">
+            <property name="severity" value="error"/>
+            <property name="memberModifiers" value="LITERAL_STATIC"/>
+            <property name="illegalClassNames"
+                      value="org.apache.commons.logging.LogFactory, java.util.logging.Logger, org.apache.log4j.Logger"/>
+        </module>
+    </module>
+    <module name="SuppressWarningsFilter"/>
+    <module name="SuppressionCommentFilter"/>
+    <module name="FileLength">
+        <property name="severity" value="warning"/>
+        <property name="max" value="500"/>
+    </module>
+    <module name="RegexpSingleline">
+        <metadata name="net.sf.eclipsecs.core.comment" value="Only allow up to 8 EJBs to be injected"/>
+        <property name="severity" value="warning"/>
+        <property name="format" value="\@EJB"/>
+        <property name="message" value="Too many EJB injections, code too complex?"/>
+        <property name="maximum" value="8"/>
+    </module>
+</module>

@@ -1,21 +1,14 @@
 package com.gildedrose;
 
-public class Item {
+import lombok.Builder;
+import lombok.Data;
 
-    public String name;
+@Builder
+@Data
+class Item {
 
-    public int sellIn;
+    private String name;
+    private int sellIn;
+    private int quality;
 
-    public int quality;
-
-    public Item(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
-    }
-
-   @Override
-   public String toString() {
-        return this.name + ", " + this.sellIn + ", " + this.quality;
-    }
 }

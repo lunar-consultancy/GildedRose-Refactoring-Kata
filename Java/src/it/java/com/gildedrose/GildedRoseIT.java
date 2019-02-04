@@ -17,8 +17,8 @@ public class GildedRoseIT {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].quality, is(equalTo(19)));
-        assertThat(app.items[0].quality, is(equalTo(19)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(19)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(19)));
     }
 
     @Test
@@ -29,8 +29,8 @@ public class GildedRoseIT {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].sellIn, is(equalTo(9)));
-        assertThat(app.items[0].quality, is(equalTo(0)));
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(9)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(0)));
     }
 
     @Test
@@ -41,8 +41,8 @@ public class GildedRoseIT {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].sellIn, is(equalTo(9)));
-        assertThat(app.items[0].quality, is(equalTo(21)));
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(9)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(21)));
     }
 
     @Test
@@ -55,8 +55,8 @@ public class GildedRoseIT {
             app.updateQuality();
         }
         // then
-        assertThat(app.items[0].sellIn, is(equalTo(-73)));
-        assertThat(app.items[0].quality, is(equalTo(50)));
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(-73)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(50)));
     }
 
     @Test
@@ -67,8 +67,8 @@ public class GildedRoseIT {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].sellIn, is(equalTo(-1)));
-        assertThat(app.items[0].quality, is(equalTo(80)));
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(-1)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(80)));
     }
 
     @Test
@@ -79,8 +79,8 @@ public class GildedRoseIT {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].sellIn, is(equalTo(14)));
-        assertThat(app.items[0].quality, is(equalTo(2)));
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(14)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(2)));
     }
 
     @Test
@@ -91,8 +91,8 @@ public class GildedRoseIT {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].sellIn, is(equalTo(9)));
-        assertThat(app.items[0].quality, is(equalTo(3)));
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(9)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(3)));
     }
 
     @Test
@@ -103,8 +103,8 @@ public class GildedRoseIT {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].sellIn, is(equalTo(4)));
-        assertThat(app.items[0].quality, is(equalTo(4)));
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(4)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(4)));
     }
 
     @Test
@@ -115,8 +115,8 @@ public class GildedRoseIT {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].sellIn, is(equalTo(-1)));
-        assertThat(app.items[0].quality, is(equalTo(0)));
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(-1)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(0)));
     }
 
     @Test
@@ -128,7 +128,7 @@ public class GildedRoseIT {
         // when
         app.updateQuality();
         // then
-        assertThat(app.items[0].sellIn, is(equalTo(2)));
-        assertThat(app.items[0].quality, is(equalTo(4)));
+        assertThat(app.getItems()[0].getSellIn(), is(equalTo(2)));
+        assertThat(app.getItems()[0].getQuality(), is(equalTo(4)));
     }
 }
