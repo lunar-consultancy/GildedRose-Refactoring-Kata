@@ -40,6 +40,12 @@ public class ItemVisitor implements Visitor {
     }
 
     @Override
+    public void visit(final ConjuredItem conjuredItem) {
+        decrementQuality(conjuredItem, 2);
+        decrementSellIn(conjuredItem);
+    }
+
+    @Override
     public void visit(final OtherItem otherItem) {
         decrementQuality(otherItem);
         decrementSellIn(otherItem);
@@ -58,9 +64,13 @@ public class ItemVisitor implements Visitor {
         return item.getSellIn() < MIN_SELL_IN_DATE;
     }
 
-    private void decrementQuality(final Item otherItem) {
-        if (otherItem.getQuality() > MINIMAL_QUALITY) {
-            otherItem.setQuality(otherItem.getQuality() - 1);
+    private void decrementQuality(final Item item) {
+        decrementQuality(item, 1);
+    }
+
+    private void decrementQuality(final Item item, final int decrement) {
+        if (item.getQuality() > MINIMAL_QUALITY) {
+            item.setQuality(item.getQuality() - decrement);
         }
     }
 

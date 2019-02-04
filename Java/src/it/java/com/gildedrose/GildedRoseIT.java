@@ -1,6 +1,5 @@
 package com.gildedrose;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -146,10 +145,9 @@ public class GildedRoseIT {
     }
 
     @Test
-    @Ignore("Not implemented yet")
     public void ensureThatConjuredDropsTwiceAsFastAsNormalItems() {
         // given
-        List<VisitableItem> items = Collections.singletonList(new OtherItem("Conjured Mana Cake", 3, 6));
+        List<VisitableItem> items = Collections.singletonList(new ConjuredItem("Conjured Mana Cake", 3, 6));
         itemRepository.setItems(items);
         // when
         gildedRose.updateQuality();
